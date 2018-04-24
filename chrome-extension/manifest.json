@@ -7,6 +7,12 @@
     "author": "Charles Neau",
     "homepage_url": "https://github.com/chneau/chrome-dark",
     "default_locale": "en",
+    "icons": {
+        "16": "icons/16px.png",
+        "32": "icons/32px.png",
+        "64": "icons/64px.png",
+        "128": "icons/128px.png"
+    },
     "web_accessible_resources": [
         "*.css"
     ],
@@ -16,7 +22,7 @@
     "permissions": [
         "contextMenus",
         "storage",
-        "tabs"
+        "activeTab"
     ],
     "background": {
         "scripts": [
