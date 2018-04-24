@@ -9,6 +9,9 @@ div:last-child, :not(span), :not(a) {
 :link, :visited, a, h1, h2, h3, h4, h5, h6, p, img, video, div, span, img~*, img *, video *, video~*>*, div[style*="text-align:"] *, button, button *, div[style*="text-align:"], [style*="background-image:"]~*, div[style*="background-image:"] *, [style*=".gif"], [style*=".jpg"], [style*=".png"] {
     background-color: transparent !important;
 }
+summary, button, button *, a.btn {
+    background-image: none !important;
+}
 a, a[class] {
     color: #9CF !important;
 }
