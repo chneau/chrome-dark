@@ -15,6 +15,15 @@ summary, button, button *, a.btn {
 a, a[class] {
     color: #9CF !important;
 }
+a[href] {
+    color: #39F !important;
+}
+a[href]:hover {
+    text-decoration: underline !important;
+}
+a:visited {
+    color: #B8F !important;
+}
 a:hover {
     color: #39F !important;
 }
@@ -78,8 +87,4 @@ a, span, p, div, textarea, i, td {
 ::-webkit-selection {
     color: #0FF !important;
     background-color: #333 !important;
-}
-a>span.Sprite16 {
-    filter: invert(100%);
-    -webkit-filter: invert(100%);
 }
