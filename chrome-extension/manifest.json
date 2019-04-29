@@ -3,7 +3,7 @@
     "name": "__MSG_appFullName__",
     "short_name": "__MSG_appShortName__",
     "description": "__MSG_appDescription__",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "author": "Charles Neau",
     "homepage_url": "https://github.com/chneau/chrome-dark",
     "default_locale": "en",

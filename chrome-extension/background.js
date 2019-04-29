@@ -1,11 +1,10 @@
+const hreg = /.*\/\/([^\/]*)\//;
 const manageTab = (tab) => {
-    const host = /.*\/\/([^\/]*)\//.exec(tab.url)[1];
+    const host = hreg.exec(tab.url)[1];
     chrome.storage.local.get(host, (data) => {
         const newVal = data[host] == null ? false : !data[host];
-        chrome.storage.local.set({ [host]: newVal }, () => {
-            console.log(host, newVal);
-            chrome.tabs.sendMessage(tab.id, newVal);
-        });
+        chrome.storage.local.set({ [host]: newVal }, () => chrome.tabs.sendMessage(tab.id, newVal));
+        console.log(host, newVal);
     });
 }
 
