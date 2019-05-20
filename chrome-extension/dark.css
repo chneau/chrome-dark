@@ -15,9 +15,6 @@ div:last-child,
 :not(span),
 :not(a) {
     border-color: #4AF !important;
-}
-
-div:last-child {
     background-color: #0c0c0c !important;
 }
 
