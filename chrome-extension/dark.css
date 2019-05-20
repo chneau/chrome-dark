@@ -5,7 +5,9 @@ html[id],
 body,
 body[class],
 body[id],
-input {
+input,
+input[class],
+input[id] {
     background: #0c0c0c !important;
 }
 
@@ -13,6 +15,9 @@ div:last-child,
 :not(span),
 :not(a) {
     border-color: #4AF !important;
+}
+
+div:last-child {
     background-color: #0c0c0c !important;
 }
 
@@ -145,17 +150,7 @@ td {
     text-shadow: -1px -1px #0c0c0c, 1px -1px #0c0c0c, -1px 1px #0c0c0c, 1px 1px #0c0c0c !important;
 }
 
-::-moz-selection {
-    color: #0FF !important;
-    background-color: #333 !important;
-}
-
 ::selection {
-    color: #0FF !important;
-    background-color: #333 !important;
-}
-
-::-webkit-selection {
     color: #0FF !important;
     background-color: #333 !important;
 }
