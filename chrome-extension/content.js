@@ -10,3 +10,5 @@ link.rel = `stylesheet`;
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => link.href = request ? darkCSS : noCSS);
 
 chrome.runtime.sendMessage({ host: location.host }, (response) => link.href = response ? darkCSS : noCSS);
+
+setInterval(() => [...document.querySelectorAll('.tw-button--success')].forEach(x => x.click()), 1000); // for twitch
