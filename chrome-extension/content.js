@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (!location.host.endsWith("twitch.tv")) return;
 
     function getUsersColor() {
-        let usernames = [...document.querySelectorAll(".chat-line__username")];
+        let usernames = [...document.querySelectorAll(".chat-line__username[style], .chat-author__display-name[style]")];
         return usernames.reduce((acc, cur) => {
             acc[cur.innerText.toLowerCase()] = cur.style.color;
             return acc;
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 let color = usersColor[x.innerText.substring(1).toLowerCase()];
                 if (color == null) return;
                 x.classList.add("colored");
-                x.style = `color: ${color};`;
+                x.style.color = color;
             });
         }).observe(chat, { attributes: true, childList: true });
     }, 1000);
