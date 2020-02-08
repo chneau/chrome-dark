@@ -44,12 +44,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.log("============== INSTALLATION TO NEW CHAT ==============");
         chat = newChat;
         new MutationObserver(() => { // coloring mentions
-            let mentions = [...document.querySelectorAll('.mention-fragment:not([style]), .chat-line__message-mention:not([style])')];
+            let mentions = [...document.querySelectorAll('.mention-fragment:not(.colored), .chat-line__message-mention:not(.colored)')];
             if (mentions.length == 0) return;
             let usersColor = getUsersColor();
             mentions.forEach(x => {
                 let color = usersColor[x.innerText.substring(1).toLowerCase()];
                 if (color == null) return;
+                x.classList.add("colored");
                 x.style = `color: ${color};`;
             });
         }).observe(chat, { attributes: true, childList: true });
