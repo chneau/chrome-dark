@@ -35,19 +35,24 @@ document.addEventListener("DOMContentLoaded", async function () {
         return el;
     }
 
-    new MutationObserver(() => { // coloring mentions
-        let mentions = [...document.querySelectorAll('.mention-fragment:not([style]), .chat-line__message-mention:not([style])')];
-        if (mentions.length == 0) return;
-        let usersColor = getUsersColor();
-        mentions.forEach(x => {
-            let color = usersColor[x.innerText.substring(1).toLowerCase()];
-            if (color == null) return;
-            x.style = `color: ${color};`;
-        });
-    }).observe(await getElementByAllMeans(".chat-list__list-container"), { attributes: true, childList: true });
+    setInterval(() => [...document.querySelectorAll('.tw-button--success')].forEach(x => x.click()), 1000);
 
-    new MutationObserver(() => { // clicking the reward button
-        [...document.querySelectorAll('.tw-button--success')].forEach(x => x.click())
-    }).observe(await getElementByAllMeans(".chat-input__buttons-container"), { attributes: true, childList: true });
+    var chat = null;
+    setInterval(async () => {
+        let newChat = await getElementByAllMeans(".chat-list__list-container");
+        if (newChat == chat) return;
+        console.log("============== INSTALLATION TO NEW CHAT ==============");
+        chat = newChat;
+        new MutationObserver(() => { // coloring mentions
+            let mentions = [...document.querySelectorAll('.mention-fragment:not([style]), .chat-line__message-mention:not([style])')];
+            if (mentions.length == 0) return;
+            let usersColor = getUsersColor();
+            mentions.forEach(x => {
+                let color = usersColor[x.innerText.substring(1).toLowerCase()];
+                if (color == null) return;
+                x.style = `color: ${color};`;
+            });
+        }).observe(chat, { attributes: true, childList: true });
+    }, 1000);
 
 }, false);
