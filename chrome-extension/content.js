@@ -7,7 +7,7 @@ link.type = `text/css`;
 link.rel = `stylesheet`;
 [...document.getElementsByTagName(`html`)].forEach(x => x.appendChild(link));
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => link.href = request ? darkCSS : noCSS);
+chrome.runtime.onMessage.addListener((request) => link.href = request ? darkCSS : noCSS);
 
 chrome.runtime.sendMessage({ host: location.host }, (response) => link.href = response ? darkCSS : noCSS);
 
