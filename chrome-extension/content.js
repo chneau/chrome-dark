@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     var chat = null;
     setInterval(async () => {
-        let newChat = await getElementByAllMeans(".chat-list__list-container");
+        let newChat = await getElementByAllMeans(".chat-list__list-container, .stream-chat");
         if (newChat == chat) return;
         console.log("============== INSTALLATION TO NEW CHAT ==============");
         chat = newChat;
