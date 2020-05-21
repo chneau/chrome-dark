@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 x.classList.add("colored");
                 x.style.color = color;
             });
-        }).observe(chat, { attributes: true, childList: true });
+        }).observe(chat, { childList: true, subtree: true });
     }, 1000);
 
 }, false);
